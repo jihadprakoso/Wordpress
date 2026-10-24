@@ -1,0 +1,17 @@
+/*
+Theme Name: NexusTech SEO
+Theme URI: http://localhost/My_Porto/SEO-Landing
+Author: Jihad Prakoso
+Author URI: https://github.com/jihadprakoso
+Description: Tema klasik kustom untuk mendemonstrasikan rekayasa SEO dan arsitektur content network (pillar-cluster) tanpa plugin SEO apa pun. Dilengkapi meta SEO, JSON-LD, breadcrumb, internal link otomatis, dan sitemap.xml virtual.
+Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 7.0
+Requires PHP: 8.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: nexustech-seo
+Tags: custom-logo, custom-menu, featured-images, translation-ready, blog
+*/
+
+/* Style aplikasi utama ada di assets/css/theme.css agar mudah dipisah dari header tema. */

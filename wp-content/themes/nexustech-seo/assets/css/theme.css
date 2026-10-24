@@ -1,0 +1,1217 @@
+/**
+ * NexusTech SEO — stylesheet utama.
+ * Palet & tipografi mengikuti identitas NexusTech: indigo -> sky, Inter + Outfit.
+ */
+
+:root {
+	--nt-primary: #4f46e5;
+	--nt-primary-dark: #4338ca;
+	--nt-accent: #0ea5e9;
+	--nt-ink: #0f172a;
+	--nt-body: #475569;
+	--nt-muted: #64748b;
+	--nt-surface: #ffffff;
+	--nt-surface-alt: #f8fafc;
+	--nt-border: #e2e8f0;
+	--nt-radius: 18px;
+	--nt-radius-sm: 12px;
+	--nt-shadow: 0 18px 40px -24px rgba(15, 23, 42, 0.35);
+	--nt-shadow-sm: 0 10px 24px -18px rgba(15, 23, 42, 0.4);
+	--nt-gradient: linear-gradient(135deg, #4f46e5 0%, #0ea5e9 100%);
+	--nt-header-height: 72px;
+}
+
+html {
+	scroll-behavior: smooth;
+	scroll-padding-top: calc(var(--nt-header-height) + 16px);
+}
+
+body.nexustech-body {
+	margin: 0;
+	background-color: var(--nt-surface);
+	color: var(--nt-body);
+	font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+	font-size: 1rem;
+	line-height: 1.7;
+	-webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.nt-brand-text,
+.nt-stat-value {
+	font-family: "Outfit", "Inter", system-ui, sans-serif;
+	color: var(--nt-ink);
+	line-height: 1.25;
+	letter-spacing: -0.01em;
+}
+
+a {
+	color: var(--nt-primary);
+	text-decoration: none;
+}
+
+a:hover,
+a:focus {
+	color: var(--nt-primary-dark);
+	text-decoration: underline;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+/* -------------------------------------------------------------------------
+   Aksesibilitas
+   ------------------------------------------------------------------------- */
+
+.nt-skip-link {
+	position: absolute;
+	left: -9999px;
+	top: 0;
+	z-index: 2000;
+	padding: 0.75rem 1.25rem;
+	background: var(--nt-primary);
+	color: #fff;
+	border-radius: 0 0 var(--nt-radius-sm) 0;
+	font-weight: 600;
+}
+
+.nt-skip-link:focus {
+	left: 0;
+	color: #fff;
+	text-decoration: none;
+}
+
+:focus-visible {
+	outline: 3px solid var(--nt-accent);
+	outline-offset: 2px;
+}
+
+/* -------------------------------------------------------------------------
+   Header & navigasi
+   ------------------------------------------------------------------------- */
+
+.nt-header {
+	background: rgba(255, 255, 255, 0.92);
+	backdrop-filter: blur(12px);
+	border-bottom: 1px solid var(--nt-border);
+}
+
+.nt-header.is-scrolled {
+	box-shadow: var(--nt-shadow-sm);
+}
+
+.nt-navbar {
+	padding-top: 0.6rem;
+	padding-bottom: 0.6rem;
+}
+
+.nt-brand {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.6rem;
+	font-weight: 700;
+	font-size: 1.15rem;
+	color: var(--nt-ink);
+}
+
+.nt-brand:hover {
+	text-decoration: none;
+	color: var(--nt-ink);
+}
+
+.nt-brand-mark {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 38px;
+	height: 38px;
+	border-radius: 11px;
+	background: var(--nt-gradient);
+	color: #fff;
+	font-size: 0.95rem;
+	flex: 0 0 auto;
+}
+
+.nt-menu .nav-link {
+	color: var(--nt-ink);
+	font-weight: 500;
+	padding: 0.5rem 0.85rem;
+	border-radius: 999px;
+}
+
+.nt-menu .nav-link:hover,
+.nt-menu .nav-link.is-active,
+.nt-menu .current-menu-item > .nav-link,
+.nt-menu .current_page_item > .nav-link,
+.nt-menu .current-menu-ancestor > .nav-link {
+	color: var(--nt-primary);
+	background: rgba(79, 70, 229, 0.08);
+}
+
+.navbar-toggler {
+	border-color: var(--nt-border);
+}
+
+/* -------------------------------------------------------------------------
+   Tombol
+   ------------------------------------------------------------------------- */
+
+.btn {
+	border-radius: 999px;
+	font-weight: 600;
+	padding: 0.6rem 1.35rem;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	border-width: 1.5px;
+}
+
+.btn:hover,
+.btn:focus {
+	text-decoration: none;
+}
+
+.btn-nt-primary {
+	background: var(--nt-primary);
+	border-color: var(--nt-primary);
+	color: #fff;
+}
+
+.btn-nt-primary:hover,
+.btn-nt-primary:focus {
+	background: var(--nt-primary-dark);
+	border-color: var(--nt-primary-dark);
+	color: #fff;
+}
+
+.btn-nt-outline {
+	background: transparent;
+	border-color: var(--nt-primary);
+	color: var(--nt-primary);
+}
+
+.btn-nt-outline:hover,
+.btn-nt-outline:focus {
+	background: var(--nt-primary);
+	color: #fff;
+}
+
+.btn-nt-light {
+	background: #fff;
+	border-color: #fff;
+	color: var(--nt-primary);
+}
+
+.btn-nt-light:hover,
+.btn-nt-light:focus {
+	background: #eef2ff;
+	border-color: #eef2ff;
+	color: var(--nt-primary-dark);
+}
+
+.btn-nt-ghost {
+	background: transparent;
+	border-color: rgba(255, 255, 255, 0.6);
+	color: #fff;
+}
+
+.btn-nt-ghost:hover,
+.btn-nt-ghost:focus {
+	background: rgba(255, 255, 255, 0.14);
+	border-color: #fff;
+	color: #fff;
+}
+
+/* -------------------------------------------------------------------------
+   Hero
+   ------------------------------------------------------------------------- */
+
+.nt-hero {
+	position: relative;
+	overflow: hidden;
+	padding: 4.5rem 0 3.5rem;
+	background:
+		radial-gradient(1100px 420px at 12% -10%, rgba(79, 70, 229, 0.16), transparent 62%),
+		radial-gradient(900px 380px at 92% 0%, rgba(14, 165, 233, 0.16), transparent 58%),
+		var(--nt-surface-alt);
+	border-bottom: 1px solid var(--nt-border);
+}
+
+.nt-hero-inner {
+	max-width: 780px;
+}
+
+.nt-eyebrow {
+	margin: 0 0 0.85rem;
+	font-size: 0.78rem;
+	font-weight: 700;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: var(--nt-primary);
+}
+
+.nt-hero-title {
+	margin: 0 0 1rem;
+	font-size: clamp(1.9rem, 4vw, 3rem);
+	font-weight: 800;
+}
+
+.nt-hero-lead {
+	margin: 0 0 1.75rem;
+	font-size: 1.075rem;
+	color: var(--nt-body);
+	max-width: 62ch;
+}
+
+.nt-hero-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+}
+
+.nt-hero-stats {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2.25rem;
+	margin: 2.25rem 0 0;
+	padding: 0;
+	list-style: none;
+}
+
+.nt-hero-stats li {
+	display: flex;
+	flex-direction: column;
+}
+
+.nt-stat-value {
+	font-size: 1.75rem;
+	font-weight: 800;
+	color: var(--nt-primary);
+}
+
+.nt-stat-label {
+	font-size: 0.85rem;
+	color: var(--nt-muted);
+}
+
+/* -------------------------------------------------------------------------
+   Seksi umum
+   ------------------------------------------------------------------------- */
+
+.nt-section {
+	padding: 4rem 0;
+}
+
+.nt-section-alt {
+	background: var(--nt-surface-alt);
+	border-top: 1px solid var(--nt-border);
+	border-bottom: 1px solid var(--nt-border);
+}
+
+.nt-section-head {
+	max-width: 720px;
+	margin-bottom: 2.25rem;
+}
+
+.nt-section-title {
+	margin: 0 0 0.6rem;
+	font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+	font-weight: 700;
+}
+
+.nt-section-lead {
+	margin: 0;
+	color: var(--nt-muted);
+}
+
+.nt-section-more {
+	margin: 2.25rem 0 0;
+}
+
+.nt-link-arrow {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.45rem;
+	font-weight: 600;
+}
+
+/* -------------------------------------------------------------------------
+   Kartu layanan
+   ------------------------------------------------------------------------- */
+
+.nt-service-card {
+	height: 100%;
+	padding: 1.85rem;
+	background: var(--nt-surface);
+	border: 1px solid var(--nt-border);
+	border-radius: var(--nt-radius);
+	box-shadow: var(--nt-shadow-sm);
+	transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.nt-service-card:hover {
+	transform: translateY(-4px);
+	box-shadow: var(--nt-shadow);
+}
+
+.nt-service-icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 48px;
+	height: 48px;
+	margin-bottom: 1rem;
+	border-radius: 14px;
+	background: rgba(79, 70, 229, 0.1);
+	color: var(--nt-primary);
+	font-size: 1.15rem;
+}
+
+.nt-service-title {
+	margin: 0 0 0.6rem;
+	font-size: 1.2rem;
+}
+
+.nt-service-title a {
+	color: var(--nt-ink);
+}
+
+.nt-service-title a:hover {
+	color: var(--nt-primary);
+	text-decoration: none;
+}
+
+.nt-service-text {
+	margin: 0 0 1.15rem;
+	color: var(--nt-body);
+	font-size: 0.95rem;
+}
+
+/* -------------------------------------------------------------------------
+   Diagram content network
+   ------------------------------------------------------------------------- */
+
+.nt-network {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	gap: 1.5rem;
+}
+
+.nt-network-pillar {
+	position: relative;
+	padding: 1.75rem;
+	background: var(--nt-surface);
+	border: 1px solid var(--nt-border);
+	border-top: 4px solid transparent;
+	border-image: var(--nt-gradient) 1;
+	border-radius: var(--nt-radius-sm);
+	box-shadow: var(--nt-shadow-sm);
+}
+
+.nt-network-badge {
+	display: inline-block;
+	margin: 0 0 0.6rem;
+	padding: 0.2rem 0.7rem;
+	border-radius: 999px;
+	background: var(--nt-gradient);
+	color: #fff;
+	font-size: 0.7rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.nt-network-title {
+	margin: 0 0 0.4rem;
+	font-size: 1.1rem;
+}
+
+.nt-network-title a {
+	color: var(--nt-ink);
+}
+
+.nt-network-title a:hover {
+	color: var(--nt-primary);
+	text-decoration: none;
+}
+
+.nt-network-count {
+	margin: 0 0 1rem;
+	font-size: 0.82rem;
+	color: var(--nt-muted);
+}
+
+.nt-network-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: grid;
+	gap: 0.5rem;
+}
+
+.nt-network-list li {
+	position: relative;
+	padding-left: 1.25rem;
+	font-size: 0.92rem;
+}
+
+.nt-network-list li::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0.65em;
+	width: 7px;
+	height: 7px;
+	border-radius: 50%;
+	background: var(--nt-accent);
+}
+
+/* -------------------------------------------------------------------------
+   Kartu artikel
+   ------------------------------------------------------------------------- */
+
+.nt-card {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	overflow: hidden;
+	background: var(--nt-surface);
+	border: 1px solid var(--nt-border);
+	border-radius: var(--nt-radius-sm);
+	box-shadow: var(--nt-shadow-sm);
+	transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.nt-card:hover {
+	transform: translateY(-4px);
+	box-shadow: var(--nt-shadow);
+}
+
+.nt-card-media {
+	display: block;
+	overflow: hidden;
+}
+
+.nt-card-img {
+	width: 100%;
+	aspect-ratio: 12 / 7;
+	object-fit: cover;
+}
+
+.nt-card-body {
+	display: flex;
+	flex-direction: column;
+	gap: 0.55rem;
+	padding: 1.35rem;
+}
+
+.nt-card-cat {
+	align-self: flex-start;
+	padding: 0.15rem 0.65rem;
+	border-radius: 999px;
+	background: rgba(14, 165, 233, 0.12);
+	color: #0369a1;
+	font-size: 0.72rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+}
+
+.nt-card-cat:hover {
+	text-decoration: none;
+	background: rgba(14, 165, 233, 0.2);
+}
+
+.nt-card-title {
+	margin: 0;
+	font-size: 1.08rem;
+}
+
+.nt-card-title a {
+	color: var(--nt-ink);
+}
+
+.nt-card-title a:hover {
+	color: var(--nt-primary);
+	text-decoration: none;
+}
+
+.nt-card-excerpt {
+	margin: 0;
+	font-size: 0.92rem;
+	color: var(--nt-body);
+}
+
+.nt-card-meta {
+	margin: auto 0 0;
+	padding-top: 0.5rem;
+	font-size: 0.8rem;
+	color: var(--nt-muted);
+	display: flex;
+	align-items: center;
+	gap: 0.45rem;
+}
+
+/* -------------------------------------------------------------------------
+   Kartu panduan (landing page)
+   ------------------------------------------------------------------------- */
+
+.nt-guide-card {
+	height: 100%;
+	padding: 1.6rem;
+	background: var(--nt-surface);
+	border: 1px solid var(--nt-border);
+	border-radius: var(--nt-radius-sm);
+	box-shadow: var(--nt-shadow-sm);
+}
+
+.nt-guide-title {
+	margin: 0 0 0.5rem;
+	font-size: 1.05rem;
+}
+
+.nt-guide-title a {
+	color: var(--nt-ink);
+}
+
+.nt-guide-text {
+	margin: 0 0 0.75rem;
+	font-size: 0.92rem;
+}
+
+/* -------------------------------------------------------------------------
+   Breadcrumb
+   ------------------------------------------------------------------------- */
+
+.nt-breadcrumb {
+	margin-bottom: 1.5rem;
+}
+
+.nt-breadcrumb .breadcrumb {
+	margin: 0;
+	font-size: 0.85rem;
+	--bs-breadcrumb-divider: "/";
+}
+
+.nt-breadcrumb .breadcrumb-item,
+.nt-breadcrumb .breadcrumb-item a {
+	color: var(--nt-muted);
+}
+
+.nt-breadcrumb .breadcrumb-item a:hover {
+	color: var(--nt-primary);
+}
+
+.nt-breadcrumb .breadcrumb-item.active {
+	color: var(--nt-ink);
+	font-weight: 600;
+}
+
+/* -------------------------------------------------------------------------
+   Konten artikel / halaman
+   ------------------------------------------------------------------------- */
+
+.nt-singular {
+	padding: 2.5rem 0 4rem;
+}
+
+.nt-content {
+	font-size: 1.02rem;
+}
+
+.nt-content > * + * {
+	margin-top: 1.1rem;
+}
+
+.nt-content h2 {
+	margin-top: 2.25rem;
+	font-size: 1.5rem;
+}
+
+.nt-content h3 {
+	margin-top: 1.75rem;
+	font-size: 1.2rem;
+}
+
+.nt-content ul,
+.nt-content ol {
+	padding-left: 1.35rem;
+}
+
+.nt-content li + li {
+	margin-top: 0.4rem;
+}
+
+.nt-content blockquote {
+	margin: 1.5rem 0;
+	padding: 1rem 1.35rem;
+	border-left: 4px solid var(--nt-primary);
+	background: var(--nt-surface-alt);
+	border-radius: 0 var(--nt-radius-sm) var(--nt-radius-sm) 0;
+	color: var(--nt-ink);
+}
+
+.nt-content code {
+	padding: 0.15rem 0.4rem;
+	background: #eef2ff;
+	border-radius: 6px;
+	color: var(--nt-primary-dark);
+	font-size: 0.9em;
+}
+
+.nt-content pre {
+	padding: 1.15rem;
+	background: #0f172a;
+	color: #e2e8f0;
+	border-radius: var(--nt-radius-sm);
+	overflow-x: auto;
+}
+
+.nt-content pre code {
+	background: transparent;
+	color: inherit;
+	padding: 0;
+}
+
+.nt-content img,
+.nt-content-image {
+	border-radius: var(--nt-radius-sm);
+}
+
+.nt-content table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.nt-content th,
+.nt-content td {
+	padding: 0.65rem 0.85rem;
+	border: 1px solid var(--nt-border);
+	text-align: left;
+}
+
+.nt-content th {
+	background: var(--nt-surface-alt);
+	color: var(--nt-ink);
+}
+
+.nt-entry-meta {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.15rem;
+	margin: 0 0 1.5rem;
+	font-size: 0.85rem;
+	color: var(--nt-muted);
+}
+
+.nt-tags {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.5rem;
+	margin-top: 2rem;
+	padding-top: 1.35rem;
+	border-top: 1px solid var(--nt-border);
+}
+
+.nt-tags-label {
+	font-size: 0.82rem;
+	font-weight: 700;
+	color: var(--nt-muted);
+}
+
+.nt-tags a {
+	padding: 0.2rem 0.7rem;
+	border: 1px solid var(--nt-border);
+	border-radius: 999px;
+	font-size: 0.8rem;
+	color: var(--nt-body);
+}
+
+.nt-tags a:hover {
+	border-color: var(--nt-primary);
+	color: var(--nt-primary);
+	text-decoration: none;
+}
+
+/* Blok pillar induk */
+.nt-pillar-box {
+	margin-top: 2.5rem;
+	padding: 1.75rem;
+	background: linear-gradient(135deg, rgba(79, 70, 229, 0.08), rgba(14, 165, 233, 0.08));
+	border: 1px solid rgba(79, 70, 229, 0.22);
+	border-radius: var(--nt-radius);
+}
+
+.nt-pillar-box-title {
+	margin: 0 0 0.5rem;
+	font-size: 1.25rem;
+}
+
+.nt-pillar-box-title a {
+	color: var(--nt-ink);
+}
+
+.nt-pillar-box-text {
+	margin: 0 0 0.85rem;
+	font-size: 0.94rem;
+	color: var(--nt-body);
+}
+
+/* Daftar isi panduan */
+.nt-toc {
+	margin-bottom: 1.75rem;
+	padding: 1.5rem;
+	background: var(--nt-surface-alt);
+	border: 1px solid var(--nt-border);
+	border-radius: var(--nt-radius-sm);
+}
+
+.nt-toc-title {
+	margin: 0 0 0.85rem;
+	font-size: 1.05rem;
+}
+
+.nt-toc-list {
+	margin: 0;
+	padding-left: 1.2rem;
+	font-size: 0.93rem;
+}
+
+.nt-toc-list li + li {
+	margin-top: 0.5rem;
+}
+
+.nt-toc-empty {
+	margin: 0;
+	font-size: 0.9rem;
+	color: var(--nt-muted);
+}
+
+/* -------------------------------------------------------------------------
+   Arsip, pagination, sidebar
+   ------------------------------------------------------------------------- */
+
+.nt-archive,
+.nt-404 {
+	padding: 2.5rem 0 4rem;
+}
+
+.nt-archive-head {
+	max-width: 720px;
+	margin-bottom: 2rem;
+}
+
+.nt-archive-title {
+	margin: 0 0 0.5rem;
+	font-size: clamp(1.5rem, 2.8vw, 2.15rem);
+	font-weight: 700;
+}
+
+.nt-archive-desc {
+	margin: 0;
+	color: var(--nt-muted);
+}
+
+.nt-pagination {
+	margin-top: 2.75rem;
+}
+
+.nt-pagination .page-numbers {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 42px;
+	padding: 0.5rem 0.85rem;
+	border: 1px solid var(--nt-border);
+	border-radius: 999px;
+	color: var(--nt-body);
+	font-weight: 600;
+}
+
+.nt-pagination .page-numbers:hover {
+	border-color: var(--nt-primary);
+	color: var(--nt-primary);
+	text-decoration: none;
+}
+
+.nt-pagination .page-numbers.current {
+	background: var(--nt-primary);
+	border-color: var(--nt-primary);
+	color: #fff;
+}
+
+.nt-pagination .nav-links {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+
+.nt-pagination .screen-reader-text {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+}
+
+.nt-sidebar .widget {
+	margin-bottom: 1.75rem;
+	padding: 1.35rem;
+	background: var(--nt-surface-alt);
+	border: 1px solid var(--nt-border);
+	border-radius: var(--nt-radius-sm);
+}
+
+.nt-sidebar .widget-title {
+	margin: 0 0 0.85rem;
+	font-size: 1rem;
+}
+
+.nt-sidebar ul {
+	margin: 0;
+	padding-left: 1.15rem;
+	font-size: 0.92rem;
+}
+
+.nt-sidebar li + li {
+	margin-top: 0.4rem;
+}
+
+.nt-empty {
+	padding: 2.5rem;
+	text-align: center;
+	background: var(--nt-surface-alt);
+	border: 1px dashed var(--nt-border);
+	border-radius: var(--nt-radius);
+}
+
+.nt-empty .search-form {
+	margin-top: 1rem;
+}
+
+.nt-empty-text {
+	color: var(--nt-muted);
+}
+
+.nt-author-card {
+	display: flex;
+	gap: 1.25rem;
+	align-items: flex-start;
+	margin-bottom: 2rem;
+	padding: 1.5rem;
+	background: var(--nt-surface-alt);
+	border: 1px solid var(--nt-border);
+	border-radius: var(--nt-radius);
+}
+
+.nt-author-avatar {
+	border-radius: 50%;
+	flex: 0 0 auto;
+}
+
+.nt-author-name {
+	margin: 0 0 0.35rem;
+	font-size: 1.2rem;
+}
+
+.nt-author-bio {
+	margin: 0;
+	font-size: 0.93rem;
+	color: var(--nt-body);
+}
+
+/* -------------------------------------------------------------------------
+   FAQ
+   ------------------------------------------------------------------------- */
+
+.nt-accordion .accordion-item {
+	margin-bottom: 0.75rem;
+	border: 1px solid var(--nt-border);
+	border-radius: var(--nt-radius-sm) !important;
+	overflow: hidden;
+}
+
+.nt-accordion .accordion-button {
+	font-family: "Outfit", "Inter", sans-serif;
+	font-weight: 600;
+	color: var(--nt-ink);
+	background: var(--nt-surface);
+	box-shadow: none;
+}
+
+.nt-accordion .accordion-button:not(.collapsed) {
+	background: rgba(79, 70, 229, 0.07);
+	color: var(--nt-primary-dark);
+}
+
+.nt-accordion .accordion-button:focus {
+	box-shadow: none;
+	border-color: transparent;
+}
+
+.nt-accordion .accordion-body {
+	font-size: 0.95rem;
+	color: var(--nt-body);
+}
+
+/* -------------------------------------------------------------------------
+   CTA
+   ------------------------------------------------------------------------- */
+
+.nt-cta {
+	padding-bottom: 4rem;
+}
+
+.nt-cta-inner {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1.75rem;
+	padding: 2.75rem;
+	background: var(--nt-gradient);
+	border-radius: var(--nt-radius);
+	color: #fff;
+	box-shadow: var(--nt-shadow);
+}
+
+.nt-cta-title {
+	margin: 0 0 0.5rem;
+	color: #fff;
+	font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+	font-weight: 700;
+}
+
+.nt-cta-text {
+	margin: 0;
+	max-width: 52ch;
+	color: rgba(255, 255, 255, 0.88);
+}
+
+.nt-cta-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+}
+
+/* -------------------------------------------------------------------------
+   404
+   ------------------------------------------------------------------------- */
+
+.nt-404-title {
+	margin: 0 0 1rem;
+	font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+	font-weight: 800;
+}
+
+.nt-404-text {
+	max-width: 60ch;
+	color: var(--nt-muted);
+}
+
+.nt-404-search {
+	max-width: 480px;
+	margin: 1.75rem 0 2.5rem;
+}
+
+.nt-404-sub {
+	margin: 0 0 0.75rem;
+	font-size: 1.05rem;
+}
+
+.nt-link-list {
+	margin: 0;
+	padding-left: 1.15rem;
+}
+
+.nt-link-list li + li {
+	margin-top: 0.45rem;
+}
+
+.nt-404-home {
+	margin: 2.5rem 0 0;
+}
+
+.search-form {
+	display: flex;
+	gap: 0.5rem;
+}
+
+.search-form .search-field {
+	flex: 1 1 auto;
+	padding: 0.6rem 1rem;
+	border: 1px solid var(--nt-border);
+	border-radius: 999px;
+	font-family: inherit;
+}
+
+.search-form .search-submit {
+	padding: 0.6rem 1.35rem;
+	border: 1px solid var(--nt-primary);
+	border-radius: 999px;
+	background: var(--nt-primary);
+	color: #fff;
+	font-weight: 600;
+	font-family: inherit;
+}
+
+.search-form .search-submit:hover {
+	background: var(--nt-primary-dark);
+}
+
+/* -------------------------------------------------------------------------
+   Footer
+   ------------------------------------------------------------------------- */
+
+.nt-footer {
+	padding: 3.5rem 0 1.75rem;
+	background: #0f172a;
+	color: #cbd5e1;
+}
+
+.nt-footer-brand {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.6rem;
+	margin: 0 0 0.75rem;
+	font-family: "Outfit", "Inter", sans-serif;
+	font-size: 1.15rem;
+	font-weight: 700;
+	color: #fff;
+}
+
+.nt-footer-desc {
+	margin: 0 0 1.25rem;
+	font-size: 0.92rem;
+	color: #94a3b8;
+	max-width: 38ch;
+}
+
+.nt-footer-title {
+	margin: 0 0 1rem;
+	font-size: 0.95rem;
+	color: #fff;
+}
+
+.nt-footer-menu {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: grid;
+	gap: 0.55rem;
+	font-size: 0.92rem;
+}
+
+.nt-footer-menu a {
+	color: #cbd5e1;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.nt-footer-menu a:hover {
+	color: #fff;
+	text-decoration: none;
+}
+
+.nt-social {
+	display: flex;
+	gap: 0.6rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.nt-social a {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.08);
+	color: #e2e8f0;
+}
+
+.nt-social a:hover {
+	background: var(--nt-primary);
+	color: #fff;
+	text-decoration: none;
+}
+
+.nt-footer-bottom {
+	margin-top: 2.75rem;
+	padding-top: 1.5rem;
+	border-top: 1px solid rgba(255, 255, 255, 0.12);
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 0.5rem;
+	font-size: 0.82rem;
+	color: #94a3b8;
+}
+
+.nt-footer-bottom p {
+	margin: 0;
+}
+
+.nt-footer-credit {
+	color: #64748b;
+}
+
+/* -------------------------------------------------------------------------
+   Responsif & preferensi pengguna
+   ------------------------------------------------------------------------- */
+
+@media (max-width: 991.98px) {
+	.nt-hero {
+		padding: 3.25rem 0 2.75rem;
+	}
+
+	.nt-section {
+		padding: 3rem 0;
+	}
+
+	.nt-cta-inner {
+		padding: 2rem;
+	}
+
+	.nt-menu {
+		margin-top: 0.75rem;
+	}
+
+	.nt-menu .nav-link {
+		padding-left: 0;
+	}
+}
+
+@media (max-width: 575.98px) {
+	.nt-hero-stats {
+		gap: 1.5rem;
+	}
+
+	.nt-author-card {
+		flex-direction: column;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.001ms !important;
+		transition-duration: 0.001ms !important;
+	}
+}
