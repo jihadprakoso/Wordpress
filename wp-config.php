@@ -1,52 +1,102 @@
 <?php
 /**
- * Konfigurasi WordPress — Project "SEO & Landing Page Network" (tema nexustech-seo)
+ * The base configuration for WordPress
  *
- * Instalasi ini sengaja dipisah dari ../Wordpress/ agar kedua tema
- * (jihad-wp-theme dan nexustech-seo) tidak saling menindih:
- * database, tema, dan URL-nya berbeda.
+ * The wp-config.php creation script uses this file during the installation.
+ * You don't have to use the website, you can copy this file to "wp-config.php"
+ * and fill in the values.
+ *
+ * This file contains the following configurations:
+ *
+ * * Database settings
+ * * Secret keys
+ * * Database table prefix
+ * * ABSPATH
+ *
+ * @link https://developer.wordpress.org/advanced-administration/wordpress/wp-config/
+ *
+ * @package WordPress
  */
 
-// ** Pengaturan database ** //
-define( 'DB_NAME', 'db_nexustech_seo_local' );
+// ** Database settings - You can get this info from your web host ** //
+/** The name of the database for WordPress */
+define( 'DB_NAME', 'db_wordpress' );
+
+/** Database username */
 define( 'DB_USER', 'root' );
+
+/** Database password */
 define( 'DB_PASSWORD', '' );
+
+/** Database hostname */
 define( 'DB_HOST', 'localhost' );
+
+/** Database charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8mb4' );
+
+/** The database collate type. Don't change this if in doubt. */
 define( 'DB_COLLATE', '' );
 
-/**
+/**#@+
  * Authentication unique keys and salts.
+ *
+ * Change these to different unique phrases! You can generate these using
+ * the {@link https://api.wordpress.org/secret-key/1.1/salt/ WordPress.org secret-key service}.
+ *
+ * You can change these at any point in time to invalidate all existing cookies.
+ * This will force all users to have to log in again.
+ *
+ * @since 2.6.0
  */
-define( 'AUTH_KEY',         'Z3s/o3bOyNBwtS4iwjN3a0WL4PRa/SBtXFvaEE6aUygnkfo139l3VLdpIMxhQphq' );
-define( 'SECURE_AUTH_KEY',  '3bvVN1SmcjrDCep6dqC+gMTeyWajm6rXRa+Enw23agwhx4x2QxREtAxhWVR48pkI' );
-define( 'LOGGED_IN_KEY',    'NbmqjObrZRqTPi/ZXNOwz+9mUVPdFX9kwskfU5ELmi7jrsdlBytIXkVfzESiF1vw' );
-define( 'NONCE_KEY',        'XH0aX1sbal3aWs3aC1HE7XcNSL9bSvFThWPFfBq8BsfKhgi2sR4ZOTGXy4z34Mml' );
-define( 'AUTH_SALT',        'V5TlLksQTVtgTOXcaWYPFaz5h8gjvc6mWCE8r8C2srhZ3CN6swaQ3nkvMkhR5ki4' );
-define( 'SECURE_AUTH_SALT', 'eHpCj19KbHf8O6FMiWNJbq2l0rf+QWwUuHK3t1ASHVDuWUIIxOjduE3KBus00Jxi' );
-define( 'LOGGED_IN_SALT',   'j6XhlrCEnhXwNQZ+IKSQbboby1LmYLEeX++h98moIbTgvX/Qo6LsDlaIbpJn105+' );
-define( 'NONCE_SALT',       'PRLhIhgLjDKZ16FPamYuYD+bpBugOCJokOuWYCAR+dP9Oq0Ye9iStmc7SSOzTiku' );
+define( 'AUTH_KEY',         'put your unique phrase here' );
+define( 'SECURE_AUTH_KEY',  'put your unique phrase here' );
+define( 'LOGGED_IN_KEY',    'put your unique phrase here' );
+define( 'NONCE_KEY',        'put your unique phrase here' );
+define( 'AUTH_SALT',        'put your unique phrase here' );
+define( 'SECURE_AUTH_SALT', 'put your unique phrase here' );
+define( 'LOGGED_IN_SALT',   'put your unique phrase here' );
+define( 'NONCE_SALT',       'put your unique phrase here' );
 
-/** Prefix tabel database. */
+/**#@-*/
+
+/**
+ * WordPress database table prefix.
+ *
+ * You can have multiple installations in one database if you give each
+ * a unique prefix. Only numbers, letters, and underscores please!
+ *
+ * At the installation time, database tables are created with the specified prefix.
+ * Changing this value after WordPress is installed will make your site think
+ * it has not been installed.
+ *
+ * @link https://developer.wordpress.org/advanced-administration/wordpress/wp-config/#table-prefix
+ */
 $table_prefix = 'wp_';
 
-/** Alamat situs dipatok lewat konstanta agar tidak bergantung isi DB. */
-define( 'WP_HOME',    'http://localhost/My_Porto/SEO-Landing' );
-define( 'WP_SITEURL', 'http://localhost/My_Porto/SEO-Landing' );
+/**
+ * For developers: WordPress debugging mode.
+ *
+ * Change this to true to enable the display of notices during development.
+ * It is strongly recommended that plugin and theme developers use WP_DEBUG
+ * in their development environments.
+ *
+ * For information on other constants that can be used for debugging,
+ * visit the documentation.
+ *
+ * @link https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/
+ */
+define( 'WP_DEBUG', false );
 
-/* Mode pengembangan: error dicatat ke wp-content/debug.log, tidak ditampilkan. */
-define( 'WP_DEBUG',         true );
-define( 'WP_DEBUG_LOG',     true );
-define( 'WP_DEBUG_DISPLAY', false );
+/* Add any custom values between this line and the "stop editing" line. */
 
-/* Hardening instalasi lokal. */
-define( 'DISALLOW_FILE_EDIT',       true );
-define( 'AUTOMATIC_UPDATER_DISABLED', true );
+
 
 /* That's all, stop editing! Happy publishing. */
 
+/** Absolute path to the WordPress directory. */
 if ( ! defined( 'ABSPATH' ) ) {
 	define( 'ABSPATH', __DIR__ . '/' );
 }
 
+/** Sets up WordPress vars and included files. */
 require_once ABSPATH . 'wp-settings.php';
